@@ -79,7 +79,7 @@ df.insert(5, 'Date Object', list_date, True)
 df
 
 # Построение гистограммы
-plt.hist(df['Data Object'],
+plt.hist(df['Date Object'],
          label="All songs", 
          bins=100, 
          color='blue', 
