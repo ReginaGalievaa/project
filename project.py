@@ -9,7 +9,7 @@ import numpy as np
 
 def date_convertion(date_str):
   ''' Функция приведения даты формата str из столбца 'Release Date' датасета 'spotify_songs_top_100.csv' к единому формату.
-      Функция принимает только даты в форматах '%d.%B.%y' и '%d %B %Y '''
+      Функция принимает только даты в форматах '%d.%B.%y' и '%d %B %Y. '''
   if '.' in date_str:
     date_obj = datetime.strptime(date_str, '%d.%B.%y')
   else:
@@ -23,7 +23,8 @@ assert date_convertion('10.May.19') == datetime(2019, 5, 10)
 
 def ed_sheeran_song(str_artist, str_song):
   '''Функция для нахождения песен, которые исполняет Ed Sheeran.
-     Функция принимает имя исполнителя и название песни, которую он исполняет'''
+     Функция принимает имя исполнителя и название песни, которую он исполняет.
+     Функция врзвращает название песни, если ее исполняет Ed Sheeran.'''
   if 'Ed Sheeran' in str_artist:
     return str_song
 
@@ -103,5 +104,4 @@ plt.title('Number of songs by year')
 plt.xlabel('Year')
 plt.ylabel('Number of songs')
 plt.legend()
-plt.show()
 plt.savefig('Number_of_songs_by_year.png')
