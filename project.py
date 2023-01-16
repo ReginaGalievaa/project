@@ -61,7 +61,21 @@ with open('spotify_songs_top_100.csv') as f:
         streams[artist] += stream
       else:
         streams[artist] = stream
-        
+
+answers = [
+    {
+        "Ed Sheeran": ed_sheeran_songs
+    },
+    {
+        "Top 3 old songs": old_songs
+    },
+        streams
+]
+
+with open('answers.json', 'w') as f:
+    json.dump(answers, f, indent=4, sort_keys=True)
+    
+    
 # Создание нового столбца в датасете 'Date Object' с датами в единном формате для построения гистограммы
 with open('spotify_songs_top_100.csv') as f:
     reader = csv.reader(f)
